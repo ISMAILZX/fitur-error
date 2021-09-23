@@ -1,4 +1,4 @@
-global.DeveloperMode = 'true' //true Or false
+global.DeveloperMode = 'false' //true Or false
 global.linkGC = ['https://bit.ly/36cg9x']
 global.channelYT = ['https://bit.ly/3h3bm4'] 
 global.owner = ['628882611841', '62852422542271', '62878349937221']// Put your number here
