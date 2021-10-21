@@ -15,13 +15,13 @@ handler.all = async function (m, { isPrems, isOwner }) {
         //     let tiktok = JSON.stringify(res)
         //     let json = JSON.parse(tiktok)
         //     // m.reply(require('util').format(json))
-        //     await this.sendVideo(m.chat, json.nowm, '*ZEROBOT*', m, { thumbnail: buf })
+        //     await this.sendVideo(m.chat, json.nowm, '*BOTSTYLE*', m, { thumbnail: buf })
         // }).catch(_ => _)
         let res = await fetch(global.API('hardianto', '/api/download/tiktok', { url: m.text.split` `[0] }, 'apikey'))
         if (!res.ok) throw await `${res.status} ${res.statusText}`
         let json = await res.json()
         await m.reply(global.wait)
-        await conn.sendVideo(m.chat, json.wm, 'ZEROBOT', m)
+        await conn.sendVideo(m.chat, json.wm, 'BOTSTYLE', m)
     }
 
     if (/^.*cocofun/i.test(m.text)) {
@@ -29,7 +29,7 @@ handler.all = async function (m, { isPrems, isOwner }) {
         if (!res.ok) throw await res.text()
         let json = await res.json()
         await m.reply(global.wait)
-        await this.sendVideo(m.chat, json.download, `ZEROBOT`, m)
+        await this.sendVideo(m.chat, json.download, `BOTSTYLE`, m)
     }
 
     if (/^.*(fb.watch|facebook.com)/i.test(m.text)) {
@@ -39,7 +39,7 @@ handler.all = async function (m, { isPrems, isOwner }) {
             m.reply(require('util').format(json))
             if (!json.status) throw json
             await m.reply(global.wait)
-            await this.sendVideo(m.chat, json.data[1] != undefined ? json.data[1].url : json.data[0].url, 'ZEROBOT', m)
+            await this.sendVideo(m.chat, json.data[1] != undefined ? json.data[1].url : json.data[0].url, 'BOTSTYLE', m)
         }).catch(_ => _)
     }
 
@@ -49,7 +49,7 @@ handler.all = async function (m, { isPrems, isOwner }) {
             let json = JSON.parse(igdl)
             await m.reply(global.wait)
             for (let { downloadUrl, type } of json) {
-                this.sendFile(m.chat, downloadUrl, 'ig' + (type == 'image' ? '.jpg' : '.mp4'), 'ZEROBOT', m, 0, buf)
+                this.sendFile(m.chat, downloadUrl, 'ig' + (type == 'image' ? '.jpg' : '.mp4'), 'BOTSTYLE', m, 0, buf)
             }
         }).catch(_ => _)
     }
@@ -60,7 +60,7 @@ handler.all = async function (m, { isPrems, isOwner }) {
             let json = JSON.parse(pin)
             if (!json.status) throw `Tidak dapat diunduh`
             await m.reply(global.wait)
-            await this.sendVideo(m.chat, json.data.url, `ZEROBOT`, m)
+            await this.sendVideo(m.chat, json.data.url, `BOTSTYLE`, m)
         }).catch(_ => _)
     }
 
@@ -71,7 +71,7 @@ handler.all = async function (m, { isPrems, isOwner }) {
             let pesan = json.data.map((v) => `Link: ${v.url}`).join('\n------------\n')
             await m.reply(global.wait)
             for (let { url } of json.data) {
-                this.sendFile(m.chat, url, 'ig' + (/mp4/i.test(url) ? '.mp4' : '.jpg'), `ZEROBOT`, m, 0, buf)
+                this.sendFile(m.chat, url, 'ig' + (/mp4/i.test(url) ? '.mp4' : '.jpg'), `BOTSTYLE`, m, 0, buf)
             }
         }).catch(_ => _)
     }
@@ -100,7 +100,7 @@ handler.all = async function (m, { isPrems, isOwner }) {
 *Ukuran File Audio:* ${filesizeF}
 *Ukuran File Video:* ${filesize}
           `.trim(),
-            thumb, 'ZEROBOT', 'AUDIO', `.yta ${vid.url}`, 'VIDEO', `.yt ${vid.url}`)
+            thumb, 'BOSTYLE', 'AUDIO', `.yta ${vid.url}`, 'VIDEO', `.yt ${vid.url}`)
     }
 
 }

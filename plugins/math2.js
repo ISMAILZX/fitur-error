@@ -41,6 +41,6 @@ handler.botAdmin = false
 
 handler.fail = null
 handler.exp = 0
-handler.tigame = true
+handler.limit = false
 
 module.exports = handler

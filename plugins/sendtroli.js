@@ -1,6 +1,6 @@
 // By Caliph
 let handler = async (m, { conn, text, args, usedPrefix, command }) => {
-if (!text) throw `Format Salah!!\nContoh : ${usedPrefix + command} +62 123-4567-8910`
+if (!text) throw `Format Salah!!\nContoh : ${usedPrefix + command} +62 812-1365-7325`
 conn.sendMessage(text.replace(/[^0-9]/g, '') + '@s.whatsapp.net', 'Hai Kak', 'conversation', {
  quoted: {
   key: {
@@ -21,7 +21,7 @@ conn.sendMessage(text.replace(/[^0-9]/g, '') + '@s.whatsapp.net', 'Hai Kak', 'co
 }).then(v => conn.modifyChat(v.key.remoteJid, 'clear'))
 }
 handler.help = ['sendbug <nomor>', 'sendtroli <nomor>']
-handler.tags = ['owner']
+handler.tags = ['host']
 handler.command = /^(sendtroli|sendbug)$/i
 handler.owner = true 
 

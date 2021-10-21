@@ -1,36 +1,28 @@
-let handler  = async (m, { conn, args }) => {
- const ftoko = { key : { fromMe: false, participant : `0@s.whatsapp.net` },message: {orderMessage: { message: `Bot Ini Menggunakan Script : https://github.com/ZeroChanBot/ZeroGans\n\nAtau Bisa Dapatkan Script Free Apikey : https://youtube.com/c/ZEROBOT7`,thumbnail: fs.readFileSync("./src/logo.jpg")}}}
+let handler  = async (m, { conn, usedPrefix: _p }) => {
+let info = `
+*BOT Ini Menggunakan SC ALAN BOTZ *
+*https://youtu.be/R0z6EwENpj8*
+_Password Ada Di Video_
+_Jika Tidak Menemukannya Bisa Chat_
+_wa.me/6285718366706_
+`.trim()
 
-
-
-   ppnya = global.thumbnail ? global.thumbnail : Buffer.alloc(0)
-
-   conn.sendMessage(m.chat, text.trim(), 'extendedTextMessage', { detectLinks: true, thumbnail: ppnya, quoted: ftoko, contextInfo : { mentionedJid: conn.parseMention(text),
-
-    externalAdReply: {
-
-                    title: `Halo Kak`,
-
-                    body: ``,
-
-                    mediaType: 2,
-
-                    thumbnailUrl: await conn.getProfilePicture(conn.user.jid),
-
-                    mediaUrl: 'https://youtube.com/c/ZEROBOT7'
-
-                }
-
-}})
-handler.command = ['sc', 'script']
+conn.fakeReply(m.chat, info, '0@s.whatsapp.net', '🔥 *SC ALAN BOTZ* 🔥', 'status@broadcast')
+}
+handler.help = ['sc']
+handler.tags = ['tutor']
+handler.command = /^(sc)$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false
 handler.group = false
 handler.private = false
+
 handler.admin = false
 handler.botAdmin = false
 
 handler.fail = null
+handler.limit = 20
 
 module.exports = handler
+ 

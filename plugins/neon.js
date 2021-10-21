@@ -4,8 +4,8 @@ let handler = async (m, { conn, args }) => {
   if (!args[0]) throw 'Masukkan Parameter'
   m.reply('Sedang Diproses...')
   let res = await fetch(`https://ariarestapi.herokuapp.com/api/textmaker/metallic?text=${response}&theme=neon&apikey=AriaApi`)
-  let image = await res.json()
-  conn.sendFile(m.chat, image, 'neon.jpg', `Nih kak`, m, false)
+  let json = await res.json()
+  conn.sendFile(m.chat, json.result.url, 'neon.jpg', `Nih kak`, m, false)
 }
 handler.help = ['neon'].map(v => v + ' <teks>')
 handler.tags = ['sticker']

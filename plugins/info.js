@@ -3,7 +3,7 @@ let info = `
 ┏━━°❀❬ *INFO* ❭❀°━━┓
 ┃
 ┃> Bot Recoded By :
-┃• PGID
+┃• ALAN BOTZ
 ┃
 ┃> Bot Dibuat Dengan :
 ┃• JavaScript via NodeJS
@@ -11,20 +11,20 @@ let info = `
 ┃
 ┃> Thanks To :
 ┃• Nurutomo
-┃• Drawl Nag
+┃• Alan Botz
 ┃• RC047/Kuhong
 ┃
 ┣━━°❀❬ *DONASI* ❭❀°━━┓
-┣➥ *XL:* [0878-3499-3722]
-┣➥ *Dana:* [0878-3499-3722]
-┣➥ *Gopay:* [0878-3499-3722]
-┣➥ *Ovo:* [0878-3499-3722]
+┣➥ *INDOSAT:* [085718366706]
+┣➥ *Dana:* [085718366706]
+┣➥ *Gopay:* [085718366706]
+┣➥ *Ovo:* [085718366706]
 ┃ 「 *Chat OWNER* 」
-┃ > *Ingin donasi? https://wa.me/6287834993722*
+┃ > *INGIN DOANSI ? https://wa.me/6285718366706*
 ┗━━━━━━━━━━━━━━━━
 `.trim()
 
-conn.fakeReply(m.chat, info, '0@s.whatsapp.net', '*BOT TERVERIFIKASI*', 'status@broadcast')
+conn.fakeReply(m.chat, info, '0@s.whatsapp.net', '*ALAN BOTZ TERVERIFIKASI*', 'status@broadcast')
 }
 handler.help = ['info']
 handler.tags = ['info']

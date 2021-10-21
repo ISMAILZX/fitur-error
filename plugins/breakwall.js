@@ -4,7 +4,7 @@ let handler = async (m, { conn, args }) => {
   if (!args) throw 'Masukkan Parameter'
   m.reply('*[❗] Wait,Tunggu Bentar Kak Sedang Dalam Proses...*')
   let res = `https://api.zeks.xyz/api/breakwall?apikey=MIMINGANZ&text=${response}`
-  conn.sendFile(m.chat, res, 'nama.jpg', `Nih Kak`, m, false)
+  conn.sendFile(m.chat, res, 'nama.jpg', `Nih Mhank`, m, false)
 }
 handler.help = ['breakwall'].map(v => v + ' <teks>')
 handler.tags = ['sticker']

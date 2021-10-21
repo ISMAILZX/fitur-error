@@ -7,6 +7,15 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
   let isUser = false
   switch (type) {
     case 'welcome':
+      if (!m.isGroup) {
+        if (!isOwner) {
+          global.dfail('group', m, conn)
+          throw false
+        }
+      } else if (!isAdmin) {
+        global.dfail('admin', m, conn)
+        throw false
+      }
       chat.welcome = isEnable
       break
     case 'detect':
@@ -109,12 +118,9 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       }
       conn.callWhitelistMode = isEnable
       break
-    case 'simi':
-      chat.simi = isEnable
-      break
     default:
       if (!/[01]/.test(command)) throw `
-List option: welcome | delete | public | antilink | autolevelup | antitoxic | detect | nyimak | restrict | document | whitelistmycontacts | simi
+List option: welcome | delete | public | antilink | autolevelup | antitoxic | detect | nyimak | restrict | document | whitelistmycontacts
 
 Contoh:
 ${usedPrefix}enable welcome

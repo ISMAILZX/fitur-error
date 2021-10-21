@@ -9,7 +9,7 @@ handler.before = async function (m) {
   if (m.quoted.id == conn.tebakanime[id][0].id) {
     let json = JSON.parse(JSON.stringify(conn.tebakanime[id][1]))
     if (m.text.toLowerCase() == json.name.toLowerCase()) {
-      global.DATABASE._data.users[m.sender].exp += conn.tebakanime[id][2]
+      global.db._data.users[m.sender].exp += conn.tebakanime[id][2]
       m.reply(`*Jawaban Benar!*\n+${conn.tebakanime[id][2]} XP`)
       clearTimeout(conn.tebakanime[id][3])
       delete conn.tebakanime[id]

@@ -3,12 +3,12 @@ let handler = async (m, { conn, args }) => {
    response = args.join(' ')
   if (!args[0]) throw 'Masukkan Parameter'
   m.reply('Sedang Diproses...')
-  let res = await fetch(`https://ariarestapi.herokuapp.com/api/textmaker/metallic?text=${response}&theme=neon&apikey=AriaApi`)
-  let image = await res.json()
-  conn.sendFile(m.chat, image, 'metalic-glow.jpg', `Nih Kak`, m, false)
+  let res = await fetch(`https://leyscoders-api.herokuapp.com/api/textmaker/metalic-glow?q=${response}&apikey=MIMINGANZ`)
+  let json = await res.json()
+  conn.sendFile(m.chat, json.result.url, 'metalic-glow.jpg', `Nih Kak`, m, false)
 }
 handler.help = ['metalicglow'].map(v => v + ' <teks>')
-handler.tags = ['image']
+handler.tags = ['sticker']
 handler.command = /^(metalicglow)$/i
 handler.owner = false
 handler.mods = false

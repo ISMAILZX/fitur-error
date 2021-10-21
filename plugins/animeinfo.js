@@ -16,4 +16,5 @@ let animeingfo = `✨️ *Title:* ${title}
 handler.help = ['anime <judul>']
 handler.tags = ['anime']
 handler.command = /^(anime|animeinfo)$/i
+//maapin fatur :<
 module.exports = handler

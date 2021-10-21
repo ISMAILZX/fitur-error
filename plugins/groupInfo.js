@@ -13,7 +13,7 @@ let handler = async (m, { conn, participants, groupMetadata }) => {
         pp = await conn.getProfilePicture(m.chat)
     } catch (e) {
     } finally {
-        let { isBanned, welcome, antivirtex, detect, sWelcome, sBye, sPromote, sDemote, antiLink } = global.DATABASE.data.chats[m.chat]
+        let { isBanned, welcome, detect, sWelcome, sBye, sPromote, sDemote, antiLink } = global.db.data.chats[m.chat]
         const groupAdmins = getGroupAdmins(participants)
         let listAdmin = groupAdmins.map((v, i) => `${i + 1}. @${v.split('@')[0]}`).join('\n')
         let text = `*「 Group Information 」*\n
@@ -39,8 +39,7 @@ ${listAdmin}
 ${isBanned ? '✅' : '❌'} Banned
 ${welcome ? '✅' : '❌'} Welcome
 ${detect ? '✅' : '❌'} Detect
-${antivirtex ? '✅' : '❌'} Anti Virtex
-${global.DATABASE.data.chats[m.chat].delete ? '❌' : '✅'} Anti Delete
+${global.db.data.chats[m.chat].delete ? '❌' : '✅'} Anti Delete
 ${antiLink ? '✅' : '❌'} Anti Link
 
 *Message Settings:*

@@ -1,16 +1,29 @@
-let fetch = require('node-fetch')
-let handler = async function (m, { text, isPrems, isOwner }) {
-	let user = global.DATABASE._data.users[m.sender]
-    if (!text) throw '_Ingin Cari Apa_'
-    await m.reply(global.wait)
-  let res = await fetch('https://ardhixsquerpants.herokuapp.com/api/kuso?q=' + encodeURIComponent(text))
-let json= await res.json()
-  const raku =  `*JUDUL :* "${json.title}"\n\n*info:* ${json.info}\n\n*SINOPSIS :* ${json.sinopsis}\n\n*LINK DOWNLOADS:* ${json.link_dl}`
-     conn.sendFile(m.chat,json.thumb, 'image.jpg', raku, m)
+let axios = require("axios");
+let handler = async(m, { conn, text }) => {
+
+    if (!text) return conn.reply(m.chat, 'Silahkan Ketik Apa Yg Mau Kamu Cari,Contoh *!kusonime doraemon*', m)
+
+  await m.reply('*[❗] WAIT, Tunggu Sebentar*\n*Kalo Gak Menerima Pesan Itu Tanda Nya Kamu Salah Kasih Judul:v.*')
+	axios.get(`https://recoders-area.herokuapp.com/api/anime/kusonime?search=${text}&apikey=FreeApi`).then ((res) => {
+	 	let hasil = `*Title :${res.data.result.title}*\n*Title JP :${res.data.result.title_jp}*\n*Season :${res.data.result.season}*\n*Genre :${res.data.result.genre}*\n*Durasi :${res.data.result.duration}*\n*Descrition :${res.data.result.description}*\n*Download :*\n*Resolusi :${res.data.download.resolution}*\n*Download List :*\n*Link Download :${res.data.download_list.download_link}*\n*Media :${res.data.download_list.downloader}*`                     
+
+    conn.reply(m.chat, hasil, m)
+	})
 }
-handler.help = ['kusonime <judul>']
+handler.help = ['kusonime'].map(v => v + ' <nama>')
 handler.tags = ['anime']
-handler.command = /^kusonime$/i
+handler.command = /^(kusonime)$/i
+handler.owner = false
+handler.mods = false
+handler.premium = false
 handler.group = false
+handler.private = false
+
+handler.admin = false
+handler.botAdmin = false
+
+handler.fail = null
+handler.exp = 0
+handler.limit = true
 
 module.exports = handler

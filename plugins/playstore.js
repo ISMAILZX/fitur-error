@@ -11,12 +11,8 @@ let handler = async(m, { conn, text }) => {
     if (!json.status) throw json
     let thumb = await (await fetch(json.logo)).buffer()
     let hasil = `*── 「 PLAY STORE 」 ──*\n\n➸ *Nama*: ${json.title}\n➸ *Developer*: ${json.developer.name}\n➸ *Size:* ${json.size}\n➸ *Rating:* ${json.star}\n➸ *Rate For:* ${json.contentRating}\n➸ *Viewers:* ${json.total_review}\n➸ *Updated:* ${json.updated}\n➸ *Downloads:* ${json.installs}\n➸ *Compatible:* ${json.requires}\n➸ *Version:* ${json.currentVersion}\n➸ *Url:* ${json.url}\n➸ *Deskripsi*: ${json.whats_new}`
-    
-    conn.reply(m.chat, hasil, m)
-    
-    let file = json.url
-    
-    if (text.endsWith('.apk/file')) return conn.sendFile(m.chat, file, thumb + 'playstore.jpg', json.title + '.apk', '', m, false, { asDocument: true })
+
+    conn.sendFile(m.chat, thumb, 'playstore.jpg', hasil, m)
 }
 handler.help = ['playstore'].map(v => v + ' <query>')
 handler.tags = ['search']

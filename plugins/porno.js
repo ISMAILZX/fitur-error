@@ -2,7 +2,7 @@ let imageToBase64 = require('image-to-base64');
 let axios = require("axios");
 let handler = async(m, { conn, text }) => {
 let str = `
-TOBAT BANG, NANTI DOSA LOH
+TOBAT TOLOLL
 `.trim()
 
   await m.reply('Searching...')
@@ -17,10 +17,11 @@ TOBAT BANG, NANTI DOSA LOH
         })
     })
 }
-handler.help = ['porno (-10 Limit)']
+handler.help = ['porno']
 handler.tags = ['dewasa']
 handler.command = /^(porno)$/i
-handler.private = false
+handler.off = true
+handler.private = true
 
 handler.limit = 10
 

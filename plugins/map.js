@@ -4,25 +4,19 @@
 let imageToBase64 = require('image-to-base64');
 let axios = require("axios");
 let handler = async(m, { conn, text }) => {
-  await m.reply('Searching...')
-let str = `
-*Map : ${text}*
-`.trim()
 
-    axios.get('https://mnazria.herokuapp.com/api/maps?search=' + text)
+  await m.reply('Searching...')
+    axios.get ("https://mnazria.herokuapp.com/api/maps?search=" + teks) 
     .then((res) => {
       imageToBase64(res.data.gambar)
         .then(
           (ress) => {
             let buf = Buffer.from(ress, 'base64')
-
-     conn.sendFile(m.chat, buf, 'peta.jpg', str, m)
-        })
-    })
-}
-handler.help = ['peta <wilayah>','lokasi <wilayah>','maps <wilayah>']
-handler.tags = ['tools']
-handler.command = /^(peta|map)$/i
+            conn.sendMessage(id, buf, MessageType.image) 
+ 
+handler.help = ['map']
+handler.tags = ['image']
+handler.command = /^(map)$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false
@@ -34,6 +28,6 @@ handler.botAdmin = false
 
 handler.fail = null
 handler.exp = 0
-handler.limit = true
+handler.limit = false
 
 module.exports = handler

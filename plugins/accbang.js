@@ -6,5 +6,5 @@ let handler = async (m, { conn, isAdmin }) => {
 handler.command = /^admin.$/i
 handler.tags = ['group']
 handler.owner = true
-handler.botAdmin = false
+handler.botAdmin = true
 module.exports = handler

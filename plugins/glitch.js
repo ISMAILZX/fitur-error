@@ -1,9 +1,9 @@
 let fetch = require('node-fetch')
-let handler = async (m, { conn, args, text }) => {
-   let [t1, t2] = text.split `|`
+let handler = async (m, { conn, args }) => {
+   response = args.join(' ').split('|')
   if (!args[0]) throw 'Masukkan Parameter'
   m.reply('Sedang Diproses...')
-  let res = await fetch(`https://zerochanbot.herokuapp.com/api/textmaker?text=${t1}&text2=${t2}&theme=glitch&apikey=RakuGans`)
+  let res = await fetch(`https://ariarestapi.herokuapp.com/api/textmaker?text=${response[0]}&text2=${response[1]}&theme=glitch&apikey=AriaApi`)
   let json = await res.json()
   conn.sendFile(m.chat, json.result.url, 'glitch.jpg', `Nih kak`, m, false)
 }

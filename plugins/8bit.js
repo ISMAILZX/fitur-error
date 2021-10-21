@@ -27,7 +27,7 @@ gay = `sayang`
   }
 }
 handler.help = ['8bit (reply)']
-handler.tags = ['image']
+handler.tags = ['editor']
 handler.command = /^8bit$/i
 handler.owner = false
 handler.mods = false

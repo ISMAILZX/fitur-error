@@ -8,7 +8,7 @@ let handler = async (m, { conn, args }) => {
   conn.sendFile(m.chat, json.result.img, 'heroml.jpg', `${response}`, m, false)
 }
 handler.help = ['heroml'].map(v => v + ' <nama>')
-handler.tags = ['image']
+handler.tags = ['internet']
 handler.command = /^(heroml)$/i
 handler.owner = false
 handler.mods = false

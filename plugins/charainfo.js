@@ -13,4 +13,5 @@ let charaingfo = `*Name:* ${name}
 handler.help = ['character <nama>']
 handler.tags = ['anime']
 handler.command = /^(chara|character)$/i
+//kyaa jangan biarkan wabot-aq terbengkalai sampai nurutomo kembali
 module.exports = handler

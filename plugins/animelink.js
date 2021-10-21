@@ -1,10 +1,9 @@
 let handler = async m => m.reply(`
-┏━━━━━━━━━━━━━━━━━━━━┅
+┏ ┅ ━━━━━━━━━━━━━━━━━━━━ ┅ ━
 ┇       *「 Anime 」*
-┣━━━━━━━━━━━━━━━━━━━━┅
+┣ ┅ ━━━━━━━━━━━━━━━━━━━━ ┅ ━
 ┃ ❖ https://kusonime.com
 ┃ ❖ https://anoboy.media
-┃ ❖ https://AniFans.club
 ┃ ❖ https://oploverzz.net
 ┃ ❖ https://Otakudesu.moe
 ┃ ❖ https://neonime.site
@@ -44,10 +43,10 @@ let handler = async m => m.reply(`
 ┃ ❖ https://kazefuri.net
 ┃ ❖ https://haruzorasubs.net
 ┃ ❖ https://myanimelist.net
-┗━━━━━━━━━━━━━━━━━━━━┅
+┗ ┅ ━━━━━━━━━━━━━━━━━━━━ ┅ ━
 `.trim()) // Tambah sendiri kalo mau
 handler.help = ['animelink']
-handler.tags = ['anime']
+handler.tags = ['weebs']
 handler.command = /^animelink$/i
 handler.register = true
 

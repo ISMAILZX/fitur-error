@@ -1,16 +1,14 @@
-let { MessageType } = require('@adiwajshing/baileys')
-const { servers, yta, ytv } = require('../lib/y2mate')
 let yts = require('yt-search')
 let fetch = require('node-fetch')
-let handler = async (m, { conn, command, text, usedPrefix }) => {
-  if (!text) throw `Cari Apa Bang?\n\nContoh:\n${usedPrefix + command} california`
-  let chat = global.DATABASE.data.chats[m.chat]
+const { servers, yta, ytv } = require('../lib/y2mate')
+let handler = async (m, { conn, command, text, isPrems, isOwner }) => {
+  if (!text) throw 'Cari apa Kak?'
+  let chat = global.DATABASE._data.chats[m.chat]
   let results = await yts(text)
   let vid = results.all.find(video => video.seconds < 3600)
-  if (!vid) throw 'Konten Tidak ditemukan'
+  if (!vid) throw 'Video/Audio Tidak ditemukan'
   let isVideo = /2$/.test(command)
   let yt = false
-  let yt2 = false
   let usedServer = servers[0]
   for (let i in servers) {
     let server = servers[i]
@@ -20,32 +18,24 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
       usedServer = server
       break
     } catch (e) {
-      m.reply(`Server ${server} error!${servers.length >= i + 1 ? '' : '\nmencoba server lain...'}`)
+      m.reply(`Server ${server} error!${servers.length >= i + 1 ? '' : '\nMencoba Menyambung Ke Server Lain...'}`)
     }
   }
-  if (yt === false) throw 'semua server gagal'
-  if (yt2 === false) throw 'semua server gagal'
+  if (yt === false) throw 'Semua Server Hagal'
+  if (yt2 === false) throw 'Semua Server Gagal'
   let { dl_link, thumb, title, filesize, filesizeF } = yt
-  let buttons = [
-{buttonId: `.ytmp3 ${vid.url}`, buttonText: {displayText: 'AUDIO'}, type: 1}, 
-{buttonId: `.ytmp4 ${vid.url}`, buttonText: {displayText: 'VIDEO'}, type: 2}, 
-]
-const buttonMessage = {
-    contentText: `\n*Judul:* ${title}
+  await conn.send2ButtonImg(m.chat, `
+*Judul:* ${title}
 *Ukuran File Audio:* ${filesizeF}
 *Ukuran File Video:* ${yt2.filesizeF}
-*Server y2mate:* ${usedServer}\n`,
-    footerText: 'PILIH SATU', 
-    buttons: buttons,
-    headerType: 1
-}
- await conn.sendMessage(m.chat, buttonMessage, MessageType.buttonsMessage ,m )
+*Server y2mate:* ${usedServer}
+          `.trim(),
+    await (await fetch(thumb)).buffer(), 'Click To Continue', 'AUDIO', `.yta ${vid.url}`, 'VIDEO', `.yt ${vid.url}`)
 }
 handler.help = ['play'].map(v => v + ' <pencarian>')
 handler.tags = ['downloader']
-handler.command = /^(p|play)$/i
+handler.command = /^play$/i
 
 handler.exp = 0
 
 module.exports = handler
-

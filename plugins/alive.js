@@ -11,7 +11,7 @@ function clockString(ms) {
 let handler  = async (m, { conn }) => {
   pplink = await conn.getProfilePicture(conn.user.jid)
   ppstatus = await conn.getStatus(conn.user.jid)
-  totaluser = Object.keys(DATABASE._data.users)
+  totaluser = Object.keys(DATABASE.data.users)
   ppbuffer = await fetch(pplink).then(v => v.buffer())
   conn.sendMessage(m.chat, ppbuffer, 'imageMessage', { caption:`
 ❏ *Bot Name* : ${conn.user.name}
@@ -23,11 +23,11 @@ let handler  = async (m, { conn }) => {
 ❏ *Browser* : ${conn.browserDescription[1]}
 ❏ *Uptime Bot* : ${clockString(process.uptime() * 1000)}
 ❏ *Host Number* : @${global.conn.user.jid.split('@')[0]}
-❏ *Bio Bot* : ${ppstatus.status}\n\n*Support/Subscribe Me*\n_https://youtube.com/channel/UC7SydwUESoyOQ3qZZuoaNHw_`, quoted: m, sendEphemeral: true, thumbnail: fs.readFileSync('./src/error.png'), contextInfo: { mentionedJid: [global.conn.user.jid]}})
+❏ *Bio Bot* : ${ppstatus.status}\n\n*Support/Follow Me*\nhttps://instagram.com/caliph91_`, quoted: m, sendEphemeral: true, thumbnail: fs.readFileSync('./src/error.png'), contextInfo: { mentionedJid: [global.conn.user.jid]}})
 }
-handler.help = ['alive']
+handler.help = ['info', 'alive']
 handler.tags = ['main']
-handler.command = /^(alive)$/i
+handler.command = /^(alive|info)$/i
 handler.fail = null
 
 module.exports = handler

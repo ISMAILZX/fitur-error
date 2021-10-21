@@ -6,15 +6,15 @@ let handler = async(m, { conn, text }) => {
 	axios.get(`http://hujanapi.xyz/api/apkpure?query=${text}&apikey=qrQuAVo14XfmRIr`).then ((res) => {
 	 	let hasil = `
 Nama App : ${res.data.result.data.title}
-Link Download : ${res.data.result.data.link}
-Mau Langsung Download? Ketik .apkdl (link nya)`
+Link download : ${res.data.result.data.link}
+Mau langsung download? Ketik .apkdl (link tersebut)`
 
     conn.reply(m.chat, hasil, m)
 	})
 }
-handler.help = ['apkpure (kata kunci)']
+handler.help = ['apk (kata kunci)']
 handler.tags = ['apk']
-handler.command = /^(apkpure)$/i
+handler.command = /^(apk)$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false

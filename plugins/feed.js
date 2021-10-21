@@ -74,7 +74,7 @@ let handler = async (m, { conn, args, usedPrefix }) => {
             } else m.reply(`Pet Kamu Sudah Kenyang, Cobalah Untuk Memberi Dia Makan *${waktu}* Lagi`)
             break
         default:
-            return conn.reply(m.chat, `Contoh ${usedPrefix}feed [kucing | rubah | kuda]\nContoh penggunaan: *${usedPrefix}feed kucing*`, m)
+            return conn.reply(m.chat, `${usedPrefix}feed [kucing | rubah | kuda]\nContoh penggunaan: *${usedPrefix}feed kucing*`, m)
     }
 }
 handler.help = ['feed [pet type]']

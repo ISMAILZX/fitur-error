@@ -17,7 +17,7 @@ Canvacord.Canvas.affect(image)
  conn.sendMessage(m.chat, buffer, 'imageMessage', { quoted: m, caption: '*Hadeh Kelakuan*'})
   }) 
  } catch (e) {
-   m.reply('Error || Pastikan menggunakan image!!')
+   m.reply('Error || Pastikan menggunakan image!!\njika masih error yah dari sononya:v')
 //m.reply(`${e}`)
   }
 }

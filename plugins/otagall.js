@@ -2,9 +2,9 @@ let { MessageType } = require('@adiwajshing/baileys')
 
 let handler = async (m, { conn, text, participants }) => {
 	let user = global.DATABASE._data.users[m.sender]
-  if (user.registered === false) throw `Anda Belum Terdaftar Di Database Bot Silahkan Ketik *.daftar namamu|umurmu*`
+  if (user.registered === false) throw `Lu blm daftar bego ketik /daftar dulu`
      let [l, r] = text.split `|`
-         if (!l) return conn.reply(m.chat, 'Contoh Penggunaan : *.otagall admin|Nimbrung bro*', m)
+         if (!l) return conn.reply(m.chat, 'contoh: *#tagall admin|Nimbrung bro*', m)
     if (!r) return conn.reply(m.chat, 'Silahkan masukan pesan anda', m)
 
   let users = participants.map(u => u.jid)

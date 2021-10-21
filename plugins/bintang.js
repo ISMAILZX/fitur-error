@@ -20,7 +20,7 @@ Nihh Cuk
      }
 }
 handler.help = ['bintang <teks>']
-handler.tags = ['image']
+handler.tags = ['sticker']
 handler.command = /^(bintang)$/i
 
 handler.fail = null

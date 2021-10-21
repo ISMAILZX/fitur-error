@@ -21,20 +21,17 @@ let handler = async m => m.reply(`
 ┃
 ┃
 ┃> Note : Jika Tidak Membayar Denda
-┃Maka Bot Akan Banned User Permanen
-┃
-┃> Jika User Membayar Denda Maka
-┃User Tidak Kena Banned Lagi
+┃> Maka Bot Akan Banned User Permanen
 ┃
 ┗━━━━━━━━━━━━━━━━
 
 ┏━━°❀❬ *DENDA* ❭❀°━━┓
-┣➥ *XL:* 087834993722
-┣➥ *DANA:* 087834993722
+┣➥ *XL:* [0878-3499-3722]
+┣➥ *DANA:* [0878-3499-3722]
 ┗━━━━━━━━━━━━━━━━
 `.trim()) // Tambah sendiri kalo mau
 handler.help = ['rules'] 
 handler.tags = ['info'] 
-handler.command = /^(rules)$/i
+handler.command = /^(button)$/i
 
 module.exports = handler

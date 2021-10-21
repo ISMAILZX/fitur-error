@@ -8,18 +8,17 @@ let parse = JSON.parse(data)
 let random = Math.floor(Math.random() * parse.length);
 let json = parse[random]
 
-  conn.reply(m.chat, `Sukses Bobol Bank Satria\n\nSaldo & Limit Yang Diambil ${json.exp}\nKamu Bisa Cek LIMIT/EXP/MONEY KAMU Di .dompet`, m)
-   global.DATABASE.data.users[m.sender].exp += json.exp * 1
-   global.DATABASE.data.users[m.sender].limit += json.exp * 1
-
-global.DATABASE.data.users[m.sender].money += json.exp * 1
+  conn.reply(m.chat, `Sukses Bobol Bank Satria\n\nSaldo & Limit Yang Diambil ${json.exp}\nKamu Bisa Cek Limit/Xp Di  !dompet`, m)
+   global.db.data.users[m.sender].exp += json.exp * 1
+   global.db.data.users[m.sender].limit += json.exp * 1
 }
 handler.help = ['hack']
 handler.tags = ['premium']
 handler.command = /^hack$/i
 handler.owner = false
 handler.mods = false
-handler.premium = true
+handler.premium = true
+handler.off = false
 handler.group = false
 handler.private = false
 

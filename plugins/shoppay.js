@@ -2,17 +2,17 @@ let handler  = async (m, { conn, usedPrefix: _p }) => {
 let info = `
 *METODE PEMBAYARAN*
 
-*GOPAY*
-0878-3499-3722
-Raku
+*DANA*
+085718366706
+Alming
 
 *PULSA* 
-0878-3499-3722
-Raku
+085718366706
+Alan
 
 *SHOPEEPAY* 
-0818-242-668
-Yesi Mahanta
+085718366706
+Syahran Nazhirin
 
 NOTE : PEMBAYARAN TERKENA PAJAK 2RB
 `.trim()

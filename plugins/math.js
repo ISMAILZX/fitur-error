@@ -27,8 +27,6 @@ handler.help = ['math <mode>']
 handler.tags = ['game']
 handler.command = /^math/i
 
-handler.tigame = true
-
 module.exports = handler
 
 let modes = {

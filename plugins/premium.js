@@ -16,8 +16,8 @@ let info = `
 │• 50K / VIP (Permanen)
 │
 │ > Pembayaran :
-│• XL : 6287834993722
-│• AXIS : 6283144570377
+│• DANA : 6285718366706
+│• INDOSAT : 6285718366706
 ╰────
 `.trim()
 

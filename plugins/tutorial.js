@@ -1,7 +1,7 @@
 let handler  = async (m, { conn, usedPrefix: _p }) => {
   conn.reply(m.chat, `
 Tutorial Buat Bot WA:
-Credit: *~BakaBOTZ*
+Credit: *~ALAN BOTZ*
 
 Ketik di *[TERMUX]*
 1) $ apt update
@@ -22,7 +22,7 @@ Penginstalannya cuy :)
 [ Note : Tanda $ Ga Perlu Di Ketik ]
 
 *Nih Channel Nya*..
-https://youtube.com/channel/UC7SydwUESoyOQ3qZZuoaNHw
+https://youtube.com/channel/UCjfQUhw550WDZv31eJQaehw
 
 Jangan Lupa Subscribe Yaa!!
 `.trim(), m)

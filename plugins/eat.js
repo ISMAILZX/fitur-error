@@ -20,94 +20,20 @@ let handler  = async (m, { conn, command, args, usedPrefix, DevMode }) =>  {
         if (/eat|makan/i.test(command)) {
             try {
             count = (/[0-9]/g.test(args[1])) ? !args[1] || args.length < 2 ? Math.max((Math.ceil((100 - global.DATABASE._data.users[m.sender].healt) / eatap)), 1) : Math.max(args[1], 1) : Math.max((Math.ceil((100 - global.DATABASE._data.users[m.sender].healt) / eatap)), 1)
-                 let msgsucces = (pickRandom(['Sukses Memakan', 'Nice Sukses Memakan', 'Berhasil Memakan', 'Bagus Anda Memakan', 'Anda Memakan', 'Anda Memakan']) + ' *' + (count * 1) + '* Apel')
+                 let msgsucces = (pickRandom(['Sukses Memakan', 'Nice Sukses Memankan', 'Berhasil Memakan', 'Bagus Anda Memakan', 'Anda Memakan', 'Anda Memakan']) + ' *' + (count * 1) + '* Apel')
                                   if (args[0] === 'apel') {
                     if (global.DATABASE._data.users[m.sender].healt < 100) {
                         if (global.DATABASE._data.users[m.sender].apel >= count * 1) {
                             global.DATABASE._data.users[m.sender].apel -= count * 1
-                            global.DATABASE._data.users[m.sender].healt += eatruk * count
-                            conn.reply(m.chat, msgsucces, m)
-                        } else conn.reply(m.chat, msgkurang, m)
-                    } else conn.reply(m.chat, msgpenuh, m)
-                } else if (args.length > 2 && args[0] === !'apel') m.reply(pickRandom(['Yakin Memakan apel', 'Mau makan apa? Mau makan apel :v', 'Wih mau makan apa kamu, kan bisa apel', 'Aduhay, mau makan aja itu apel', 'lah, mau makan apa?, mau makan batu?']) + '\nContoh penggunaan: *' + usedPrefix + 'apel 1*')
-                }
-     count = (/[0-9]/g.test(args[1])) ? !args[1] || args.length < 2 ? Math.max((Math.ceil((100 - global.DATABASE._data.users[m.sender].healt) / eatruk)), 1) : Math.max(args[1], 1) : Math.max((Math.ceil((100 - global.DATABASE._data.users[m.sender].healt) / eatruk)), 1)
-                 let msgsucces = (pickRandom(['Sukses Memakan', 'Nice Sukses Memakan', 'Berhasil Memakan', 'Bagus Anda Memakan', 'Anda Memakan', 'Anda Memakan']) + ' *' + (count * 1) + '* Jeruk')
-                                  if (args[0] === 'jeruk') {
-                    if (global.DATABASE._data.users[m.sender].healt < 100) {
-                        if (global.DATABASE._data.users[m.sender].jeruk >= count * 1) {
-                            global.DATABASE._data.users[m.sender].jeruk -= count * 1
                             global.DATABASE._data.users[m.sender].healt += eatap * count
                             conn.reply(m.chat, msgsucces, m)
                         } else conn.reply(m.chat, msgkurang, m)
                     } else conn.reply(m.chat, msgpenuh, m)
-                } else if (args.length > 2 && args[0] === !'jeruk') m.reply(pickRandom(['Yakin Memakan jeruk', 'Mau makan apa? Mau makan jeruk :v', 'Wih mau makan apa kamu, kan bisa jeruk', 'Hadeh, makan aja itu jeruk', 'lah, mau makan apa?, mau makan batu?']) + '\nContoh penggunaan: *' + usedPrefix + 'jeruk 1*')
-                }
-   count = (/[0-9]/g.test(args[1])) ? !args[1] || args.length < 2 ? Math.max((Math.ceil((100 - global.DATABASE._data.users[m.sender].healt) / eatma)), 1) : Math.max(args[1], 1) : Math.max((Math.ceil((100 - global.DATABASE._data.users[m.sender].healt) / eatma)), 1)
-                 let msgsucces = (pickRandom(['Sukses Memakan', 'Nice Sukses Memakan', 'Berhasil Memakan', 'Bagus Anda Memakan', 'Anda Memakan', 'Anda Memakan']) + ' *' + (count * 1) + '* Mangga')
-                                  if (args[0] === 'mangga') {
-                    if (global.DATABASE._data.users[m.sender].healt < 100) {
-                        if (global.DATABASE._data.users[m.sender].mangga >= count * 1) {
-                            global.DATABASE._data.users[m.sender].mangga -= count * 1
-                            global.DATABASE._data.users[m.sender].healt += eatma * count
-                            conn.reply(m.chat, msgsucces, m)
-                        } else conn.reply(m.chat, msgkurang, m)
-                    } else conn.reply(m.chat, msgpenuh, m)
-                } else if (args.length > 2 && args[0] === !'mangga') m.reply(pickRandom(['Yakin Memakan mangga', 'Mau makan apa? Mau makan mangga :v', 'Wih mau makan apa kamu, kan bisa makan mangga', 'Hadeh, makan aja itu mangga', 'lah, mau makan apa?, mau makan batu?']) + '\nContoh penggunaan: *' + usedPrefix + 'mangga 1*')
-                }
-   count = (/[0-9]/g.test(args[1])) ? !args[1] || args.length < 2 ? Math.max((Math.ceil((100 - global.DATABASE._data.users[m.sender].healt) / eatstr)), 1) : Math.max(args[1], 1) : Math.max((Math.ceil((100 - global.DATABASE._data.users[m.sender].healt) / eatstr)), 1)
-                 let msgsucces = (pickRandom(['Sukses Memakan', 'Nice Sukses Memakan', 'Berhasil Memakan', 'Bagus Anda Memakan', 'Anda Memakan', 'Anda Memakan']) + ' *' + (count * 1) + '* Stroberi')
-                                  if (args[0] === 'stroberi') {
-                    if (global.DATABASE._data.users[m.sender].healt < 100) {
-                        if (global.DATABASE._data.users[m.sender].stroberi >= count * 1) {
-                            global.DATABASE._data.users[m.sender].stroberi -= count * 1
-                            global.DATABASE._data.users[m.sender].healt += eatstr * count
-                            conn.reply(m.chat, msgsucces, m)
-                        } else conn.reply(m.chat, msgkurang, m)
-                    } else conn.reply(m.chat, msgpenuh, m)
-                } else if (args.length > 2 && args[0] === !'stroberi') m.reply(pickRandom(['Yakin Memakan stroberi', 'Mau makan apa? Mau makan stroberi :v', 'Wih mau makan apa kamu, kan bisa makan stroberi', 'Hadeh, makan aja itu stroberi', 'lah, mau makan apa?, mau makan batu?']) + '\nContoh penggunaan: *' + usedPrefix + 'stroberi 1*')
-                }
-  count = (/[0-9]/g.test(args[1])) ? !args[1] || args.length < 2 ? Math.max((Math.ceil((100 - global.DATABASE._data.users[m.sender].healt) / eatse)), 1) : Math.max(args[1], 1) : Math.max((Math.ceil((100 - global.DATABASE._data.users[m.sender].healt) / eatse)), 1)
-                 let msgsucces = (pickRandom(['Sukses Memakan', 'Nice Sukses Memakan', 'Berhasil Memakan', 'Bagus Anda Memakan', 'Anda Memakan', 'Anda Memakan']) + ' *' + (count * 1) + '* Semangka')
-                                  if (args[0] === 'semangka') {
-                    if (global.DATABASE._data.users[m.sender].healt < 100) {
-                        if (global.DATABASE._data.users[m.sender].semangka >= count * 1) {
-                            global.DATABASE._data.users[m.sender].semangka -= count * 1
-                            global.DATABASE._data.users[m.sender].healt += eatse * count
-                            conn.reply(m.chat, msgsucces, m)
-                        } else conn.reply(m.chat, msgkurang, m)
-                    } else conn.reply(m.chat, msgpenuh, m)
-                } else if (args.length > 2 && args[0] === !'semangka') m.reply(pickRandom(['Yakin Memakan semangka', 'Mau makan apa? Mau makan semangka :v', 'Wih mau makan apa kamu, kan bisa makan semangka', 'Hadeh, makan aja itu semangka', 'lah, mau makan apa?, mau makan batu?']) + '\nContoh penggunaan: *' + usedPrefix + 'semangka 1*')
-                }
-  count = (/[0-9]/g.test(args[1])) ? !args[1] || args.length < 2 ? Math.max((Math.ceil((100 - global.DATABASE._data.users[m.sender].healt) / eatpi)), 1) : Math.max(args[1], 1) : Math.max((Math.ceil((100 - global.DATABASE._data.users[m.sender].healt) / eatpi)), 1)
-                 let msgsucces = (pickRandom(['Sukses Memakan', 'Nice Sukses Memakan', 'Berhasil Memakan', 'Bagus Anda Memakan', 'Anda Memakan']) + ' *' + (count * 1) + '* Pisang')
-                                  if (args[0] === 'pisang') {
-                    if (global.DATABASE._data.users[m.sender].healt < 100) {
-                        if (global.DATABASE._data.users[m.sender].pisang >= count * 1) {
-                            global.DATABASE._data.users[m.sender].pisang -= count * 1
-                            global.DATABASE._data.users[m.sender].healt += eatpi * count
-                            conn.reply(m.chat, msgsucces, m)
-                        } else conn.reply(m.chat, msgkurang, m)
-                    } else conn.reply(m.chat, msgpenuh, m)
-                } else if (args.length > 2 && args[0] === !'pisang') m.reply(pickRandom(['Yakin Memakan pisang', 'Mau makan apa? Mau makan pisang :v', 'Wih mau makan apa kamu, kan bisa makan pisang', 'Hadeh, makan aja itu pisang', 'lah, mau makan apa?, mau makan batu?']) + '\nContoh penggunaan: *' + usedPrefix + 'pisang 1*')
-    } catch (e) {
-        console.log(e)
-        conn.reply(m.chat, msgerror, m)
-        if (DevMode) {
-            let file = require.resolve(__filename)
-            for (let jid of global.owner.map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').filter(v => v != conn.user.jid)) {
-                conn.sendMessage(jid, file + ' error\nNo: *' + m.sender.split`@`[0] + '*\nCommand: *' + m.text + '*\n\n*' + e + '*', MessageType.text)
-            }
-        }
-    }
-}
-
-handler.help = ['eat <item> <jumlah>']
-handler.tags = ['rpg']
-handler.command = /^(eat)$/i
-
-module.exports = handler
-
-function pickRandom(list) {
-    return list[Math.floor(Math.random() * list.length)]
-}
+                } else if (args.length > 2 && args[0] === !'apel') m.reply(pickRandom(['Yakin Memakan apel', 'Mau makan apa? Mau makan apel :v', 'Wih mau makan apa kamu, kan bisa apel', 'Aduhay, mau makan aja itu apel', 'lah, mau makan apa?, mau makan batu?']) + '\nContoh penggunaan: *' + usedPrefix + 'apel 1*')
+            } catch (e) {
+                console.log(e)
+                m.reply(msgerror)
+                if (DevMode) {
+                    let file = require.resolve(__filename)
+                    for (let jid of global.owner.map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').filter(v => v != conn.user.jid)) {
+                        conn.sendMessage(jid, file + ' error\nNo: *' + m.sender.split`@`[0] + '*\nCommand: *' + m.text + '*\n\n*' + e + '*', MessageType.text)

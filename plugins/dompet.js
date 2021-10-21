@@ -8,16 +8,15 @@ let handler = async (m, { conn }) => {
 
   } finally {
     let about = (await conn.getStatus(who).catch(console.error) || {}).status || ''
-    let { name, limit, exp, lastclaim, registered, regTime, age, money, healt, role, duidharam } = global.DATABASE.data.users[m.sender]
+    let { name, limit, exp, lastclaim, registered, regTime, age, money, healt, role } = global.DATABASE.data.users[m.sender]
     let username = conn.getName(who)
     let str = `
  *DOMPET* 
     
 *Username:* ${username}
 *Money:* Rp.${money}
-*Uang Haram:* Rp.${duidharam}
-*Exp:* ${exp}
-*Tiket:* ${limit}
+*Xp:* ${exp}
+*Limit:* ${limit}
 *Health:* ${healt}
 *Role:* ${role}
 `.trim()

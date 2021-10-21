@@ -1,15 +1,41 @@
+                                                                                                                                                                                                                                                                /*
+
+❗❗🇧 🇦 🇨 🇦    🇧 🇦 🇳 🇬  ❗❗
+
+❗MAU NGAPAIN DEK ? UDAH LAHH LU CUMA NUMPANG DOANG DI SINI !!!
+❗MAU UBAH CONSOLE YAA ? AWOKWOKWOK LU CUMA NUMPANG DI SINI DEK NTAR DI DISCONNECT NANGISS 
+❗BIARIN AE CONSOLE NYA GINI NTR ERROR SALAHIN GW NGOTAK BANG !!!
+
+
+❗ERROR ? MAKANYA JANGAN DI GANTI DEK !!!
+❗INTI NYA GINI AJA KALO DI DISCONNECTIN SAMA BASE NYA JANGAN SALAHIN GUE KARENA LO CUMA NUMPANG DI SINI !!
+❗TERLANJUR DI UBAH ? DOWNLOAD ULANG SC NYA BIAR KUOTA LU ABIS !!!
+
+🖤 THANKS TO :
+❤ NURUTOMO
+❤ SENKU ARD
+❤ ALAN BOTZ
+❤ ZERO BOTZ
+❤ FERNAZER
+❤ ARIFI RAZZAQ
+❤ PENYEDIA REST API && MODULE 
+
+HARGAI PEMBUAT CASE INI BANG 
+
+TQ DAH GA DI GANTI 🙏
+────────────────────────────────────────────────────────────────────────────────────────                                                                                                                                                                                                                                                                */
 console.log('Starting...')
 let { spawn } = require('child_process')
 let path = require('path')
 let fs = require('fs')
 let package = require('./package.json')
 const CFonts  = require('cfonts')
-CFonts.say('BakaBOTZ\nWhatsApp Bot', {
+CFonts.say('AlanBOTZ\nWhatsApp Bot', {
   font: 'chrome',
   align: 'center',
   gradient: ['red', 'magenta']
 })
-CFonts.say(`Subscribe BakaBOTZ`, {
+CFonts.say(`Subscribe ALAN BOTZ`, {
   font: 'console',
   align: 'center',
   gradient: ['red', 'magenta']

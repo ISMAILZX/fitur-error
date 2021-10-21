@@ -4,11 +4,11 @@ let axios = require("axios");
 let handler = async(m, { conn, text }) => {
 
 try {
- await m.reply('*_Tunggu Sebentar Zero Bot Sedang Memprosesnya..._*')
-    if (!text) return conn.reply(m.chat, 'Link Nya Mana? ', m)
+ await m.reply('Searching...')
+    if (!text) return conn.reply(m.chat, 'Uhm.. Urlnya Mana?', m)
 
-    axios.get(`https://api.zeks.xyz/api/mediafire?apikey=apivinz&url=${text}`).then ((res) => {
-  let wait = `❒「  *Mediafire*  」\n\nData Berhasil Didapatkan\n❒ Nama File : ${res.data.name_file}\n❒ Link : ${res.data.download}\n❒ Size : ${res.data.file_size}\n❒ Dipublikasikan : ${res.data.upload_date}\n❒ Tipe : ${res.data.file_type}\n❒ Deskripsi :\n${res.data.description}\n\nFile sedang dikirim, harap tunggu sekitar 1 menit.`
+    axios.get(`https://api.zeks.xyz/api/mediafire?apikey=MIMINGANZ&url=${text}`).then ((res) => {
+  let wait = `*MEDIAFIRE*\n\nNama File : ${res.data.name_file}\nSize : ${res.data.file_size}\nDipublikasikan : ${res.data.upload_date}\nTipe : ${res.data.file_type}\nDeskripsi :\n${res.data.description}\n\nFile sedang dikirim,, harap tunggu sekitar 1 menit.`
   let file = res.data.download
 
   conn.reply(m.chat, wait, m)

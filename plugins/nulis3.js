@@ -4,11 +4,11 @@ let handler = async (m, { conn, args }) => {
   if (!args) throw 'Teksnya Mana Udin!!'
   m.reply('*[❗] Wait,Tunggu Bentar Kak Sedang Dalam Proses...*')
   let res = `https://videfikri.com/api/nulis/?query='${response}`
-  conn.sendFile(m.chat, res, 'nulis.jpg', `Nihh Pemalas`, m, false)
+  conn.sendFile(m.chat, res, 'nama.jpg', `Nihh Pemalas`, m, false)
 }
-handler.help = ['folio3'].map(v => v + ' <teks>')
+handler.help = ['nulis3'].map(v => v + ' <teks>')
 handler.tags = ['nulis']
-handler.command = /^(folio3)$/i
+handler.command = /^(nulis3)$/i
 handler.limit = true
 handler.register = true
 

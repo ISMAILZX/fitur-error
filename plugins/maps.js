@@ -21,7 +21,7 @@ ${text}
 }
 handler.help = ['peta <wilayah>','lokasi <wilayah>','maps <wilayah>']
 handler.tags = ['tools']
-handler.command = /^(peta|map)$/i
+handler.command = /^(peta|maps|lokasi)$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false

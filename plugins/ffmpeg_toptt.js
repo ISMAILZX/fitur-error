@@ -27,7 +27,7 @@ let handler = async(m, { conn, text, args }) => {
        })
 }
 handler.help = ['toptt', 'tovn'].map(v => v + ' (reply)')
-handler.tags = ['audio']
+handler.tags = ['convert']
 handler.command = /^to(ptt|vn)$/i
 handler.owner = false
 handler.mods = false

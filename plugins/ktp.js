@@ -6,7 +6,7 @@ let handler = async(m, { conn, text }) => {
 let [nik, prov, kabu, name, ttl, jk, jl, rtrw, lurah, camat, agama, nikah, kerja, warga, until, img] = text.split `|`
 
 let str = `
-Nihh, KTP Palsu Mu, Awas Ketauan PDI🐦
+Nihh,, Buat apa sihh
 `.trim()
 
     if (!nik) return conn.reply(m.chat, 'Silahkan masukan nik', m)
@@ -37,7 +37,7 @@ Nihh, KTP Palsu Mu, Awas Ketauan PDI🐦
      }
 }
 handler.help = ['ktp <nik|prov|kabu|name|ttl|jk|jl|rtrw|lurah|camat|agama|nikah|kerja|warga|until|url>']
-handler.tags = ['image']
+handler.tags = ['sticker']
 handler.command = /^(ktp)$/i
 handler.owner = false
 handler.mods = false

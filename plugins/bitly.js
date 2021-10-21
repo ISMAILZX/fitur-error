@@ -1,19 +1,25 @@
-let handler = async (m, { text }) => {
-if (!text) throw 'Tidak Ada Url'
-m.reply('Creating Shortlink....')
-linknye = await bitly(text)
+let axios = require("axios");
+let handler = async(m, { conn, text }) => { 
 
-conn.sendMessage(m.chat, linknye, 'conversation', { quoted: m, detectLinks: false })
-}
-handler.help = ['bitly <url>']
+  await m.reply('*[❗] WAIT, Tunggu Sebentar*') 
+      axios.get(`https://api.xteam.xyz/shorturl/bitly?url=https://github.com/Bintang73&APIKEY=MIMINETBOT`)
+    let hasil = `ShortLink Telah Selesai :\n\n${res.data.result}`
+          
+    conn.sendMessage(id, hasil ,MessageType.text)
+    }
+handler.help = ['bitly']
 handler.tags = ['internet']
 handler.command = /^(bitly)$/i
+handler.owner = false
+handler.mods = false
+handler.premium = false
+handler.group = false
+handler.private = false
+
+handler.admin = false
+handler.botAdmin = false
+
+handler.fail = null
+handler.exp = 0
 
 module.exports = handler
-
-async function bitly(urls) {
-fet = require('axios')
-wow = await fet.get(`https://tobz-api.herokuapp.com/api/bitly?url=${urls}&apikey=Tobzzz17`)
-
-return wow.data.result
-}

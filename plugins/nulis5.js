@@ -4,12 +4,12 @@ let handler = async (m, { conn, args }) => {
   if (!args[0]) throw 'Masukkan Parameter Teks.\nContoh !nulis5 kanan|Bu Sri Guru Yg Wajib Ada Di Sekolahan'
   m.reply('Sedang Diproses...')
   let res = await fetch(`http://zekais-api.herokuapp.com/buku${response[0]}?text=${response[1]}`)
-  conn.sendFile(m.chat, res, 'buku.jpg', `Hati Hati Kak Ketauan Bu Sri :v`, m, false)
+  conn.sendFile(m.chat, res, 'nama.jpg', `Nih Mhank`, m, false)
 }
-handler.help = ['folio'].map(v => v + ' <kanan/kiri|teks>')
+handler.help = ['nulis5'].map(v => v + ' <kanan/kiri|teks>')
 handler.tags = ['nulis']
 
-handler.command = /^(folio)$/i
+handler.command = /^(nulis5)$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false

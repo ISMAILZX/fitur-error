@@ -9,13 +9,13 @@ let totalmem = Object.keys(member).length
 let desk = await groupMetadata.desc
 let group = await conn.getName(m.chat)
 let pp = await conn.getProfilePicture(m.chat)
-let welcome = global.DATABASE.data.chats[m.chat].welcome
-let antidelete = global.DATABASE.data.chats[m.chat].antidelete
-let antilink = global.DATABASE.data.chats[m.chat].antiLink
-let antivirtex = global.DATABASE.data.chats[m.chat].antivirtex
-let antitoxic = global.DATABASE.data.chats[m.chat].antitoxic
-let leveling = global.DATABASE.data.users[m.sender].autolevelup
-let banned = global.DATABASE.data.chats[m.chat].isBanned
+let welcome = global.db.data.chats[m.chat].welcome
+let antidelete = global.db.data.chats[m.chat].antidelete
+let antilink = global.db.data.chats[m.chat].antiLink
+let antivirtex = global.db.data.chats[m.chat].antivirtex
+let antitoxic = global.db.data.data.chats[m.chat].antitoxic
+let leveling = global.db.data.users[m.sender].autolevelup
+let banned = global.db.data.data.chats[m.chat].isBanned
 
  conn.sendFile(m.chat, pp, 'pp.jpg', `
 *「 INFO GROUP 」*
@@ -33,9 +33,9 @@ Deskripsi :
 ${desk}
 `.trim(), m)
 }
-handler.help = ['infgc']
+handler.help = ['infogrup']
 handler.tags = ['group']
-handler.command = /^(infgc)$/i
+handler.command = /^(infogro?up)$/i
 handler.group = true
 
 module.exports = handler

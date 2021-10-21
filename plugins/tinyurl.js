@@ -4,7 +4,7 @@ let handler = async(m, { conn, text }) => {
     if (!text) return conn.reply(m.chat, 'Harap Masukan Link', m)
 
   await m.reply('Shorting...')
-	axios.get(`https://api.zeks.xyz/api/urlshort?url=${text}&apikey=apivinz`).then ((res) => {
+	axios.get(`https://api.zeks.xyz/api/urlshort?url=${text}&apikey=MIMINGANZ`).then ((res) => {
 	 	let hasil = `Link Asli : ${text}\nHasilnya : ${res.data.result}`
 
     conn.reply(m.chat, hasil, m)

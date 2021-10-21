@@ -19,7 +19,7 @@ let handler = async(m, { conn, text, args, usedPrefix }) => {
 	let owgi = await conn.downloadAndSaveMediaMessage(ger)
 	let anu = await imgbb("3b8594f4cb11895f4084291bc655e510", owgi)
 	let teks = `${anu.display_url}`
-        let hasil = `Convert Image To URL:\n${teks}`
+        let hasil = `Nihh Link Gambarmu :\n${teks}`
 
 	 conn.reply(m.chat, hasil,  m)
 
@@ -31,7 +31,7 @@ let handler = async(m, { conn, text, args, usedPrefix }) => {
   }
 }
 handler.help = ['img2url']
-handler.tags = ['converter']
+handler.tags = ['tools']
 handler.command = /^(img2url)$/i
 handler.owner = false
 handler.mods = false

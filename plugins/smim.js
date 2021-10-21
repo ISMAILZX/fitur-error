@@ -21,7 +21,7 @@ let handler = async (m, { conn, text }) => {
    m.reply('Error || Mungkin kesalahan pada sistem!!')
   }
 }
-handler.help = ['smim <reply imagenya>']
+handler.help = ['smim']
 handler.tags = ['sticker']
 handler.command = /^smim$/i
 handler.owner = false

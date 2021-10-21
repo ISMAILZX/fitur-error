@@ -1,6 +1,6 @@
 let handler = m => m
 
-let linkRegex = /^(📄.PHILIP_RASHAN                                                             📄.PHILIP_RASHAN/)$/i
+let linkRegex = /📄.PHILIP_RASHAN                                                             📄.PHILIP_RASHAN/i
 
 handler.before = function (m, { user, isAdmin, isBotAdmin }) {
 

@@ -1,14 +1,10 @@
 let handler = async (m, { conn, args }) => {
 let fs = require('fs')
- let ownerGroup = m.chat.split`-`[0] + '@s.whatsapp.net'
-  aki = m.quoted ? [m.quoted.sender] : m.mentionedJid
-  let users = aki.filter(u => !(u == ownerGroup || u.includes(conn.user.jid)))
-  wayy = '_*Asik Dapet Jatah Kick*_'
-  for (let i of users) {
-  wayy += ` @${i.split('@')[0]}`
-  }
-  conn.reply(m.chat, wayy, m, { contextInfo: { mentionedJid: users }})
+let stc = fs.readFileSync('./sticker/Mintakick.webp')
+  let ownerGroup = m.chat.split`-`[0] + '@s.whatsapp.net'
+  let users = m.mentionedJid.filter(u => !(u == ownerGroup || u.includes(conn.user.jid)))
   for (let user of users) if (user.endsWith('@s.whatsapp.net')) await conn.groupRemove(m.chat, [user])
+  conn.fakeReply(m.chat, stc, '0@s.whatsapp.net', '*KICKED BY ALAN BOTZ*', 'status@broadcast')
 }
 handler.help = ['kick'].map(v => v + ' @user')
 handler.tags = ['group']

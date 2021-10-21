@@ -1,8 +1,8 @@
-let { MessageType } = require('@adiwajshing/baileys')
 let handler  = async (m, { conn, text }) => {
-	let nani = 'https://telegra.ph/file/0ee3b8764de7285d66724.jpg' 
   let chats = conn.chats.all().filter(v => !v.read_only && v.message && !v.archive).map(v => v.jid)
-  let content = conn.send2ButtonLoc(m.chat, await (await fetch(nani)).buffer(), text.trim(), '', 'LIST ALL MENU', '.allmenu', 'OWNER', '.owner', m)
+  let cc = conn.serializeM(text ? m : m.quoted ? await m.getQuotedObj() : false || m)
+  let teks = text ? text : cc.text
+  let content = conn.cMod(m.chat, cc, /bc|broadcast/i.test(teks) ? teks : teks + '\n' + readMore + '「 *ALAN BOTZ BROADCAST* 」')
   for (let id of chats) conn.copyNForward(id, content, true)
   conn.reply(m.chat, `_Mengirim pesan broadcast ke ${chats.length} chat_`, m)
 }
@@ -24,4 +24,3 @@ module.exports = handler
 
 const more = String.fromCharCode(8206)
 const readMore = more.repeat(4001)
-

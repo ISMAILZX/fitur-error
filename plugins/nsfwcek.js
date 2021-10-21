@@ -1,4 +1,4 @@
-let { getBuffer, succes } = require('/storage/emulated/0/Download/BAKA/lib/functions.js')
+let { getBuffer, succes } = require('/data/data/com.termux/files/home/kuhong/lib/functions.js')
 let imgbb = require('imgbb-uploader')
 let { MessageType, Presence, MimeType } = require('@adiwajshing/baileys')
 let ffmpeg = require('fluent-ffmpeg')
